@@ -15,12 +15,12 @@ app.intent('GetLunchSuggestions',
         ]
     },
     function (request, response) {
-        generate_suggestions(response);
+        generateSuggestions(response);
         return;
     }
 );
 
-function generate_suggestions(response) {
+function generateSuggestions(response) {
     var food = ["Thai",
         "Sushi",
         "Chik-fil-a",
