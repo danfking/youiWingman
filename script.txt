@@ -1,0 +1,23 @@
+
+* [USER] Driving along with Alexa playing mad beats (pretending on an office chair)
+* [SOMEONE] throws a rock (scrunched up paper) at the "car"
+* [USER] "Alexa play crash sound effect"
+* [ALEXA] (Crash and glass breaking noise)
+* [USER] "Alexa the windscreen is broken"
+* [ALEXA] "Is the vehicle safe to drive?"
+* [USER] "Yes"
+* [ALEXA] "Would you like to book a windscreen repair?"
+* [USER] "Yes"
+* [ALEXA] "Checking your cover with Youi... You have a $50 windscreen excess on your policy. There are 3 service providers nearby, would you like me to see who can repair as soon as possible?"
+* [USER] "Yes"
+* [ALEXA] "Contacting service providers... (elevator music). The service provider Obriens are available in 15min. They offer mobile and onsite repairs nearby. Which would you prefer?"
+* [USER] "Mobile"
+* [ALEXA] "Sending directions to Obriens and awaiting confirmation... (elevator music). Bob from Obriens is en route and will be with you in approximately 12min."
+--- 
+if we have time continue with
+---
+* [ALEXA] "You currently have you rewards dollars you can spend at 2 food outlets withing a 5min walk from here. Do you wish to know more?"
+* [USER] "Yes"
+* [ALEXA] (show relevant promos on device) "Would you like to eat at Hungry Jacks or Krispy Creme?
+* [USER] "Guzman Y Gomez"
+* [ALEXA] Guz
