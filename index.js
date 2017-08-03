@@ -2,36 +2,30 @@ var alexa = require('alexa-app');
 var app = new alexa.app();
 
 app.launch(function (request, response) {
-    response.say("Hello there, I am a bot created to help you find what to eat for lunch.");
+    response.say("Hey there, i'm your wingman from Youi and I get you.");
     response.shouldEndSession(false);
 })
 
-app.intent('GetLunchSuggestions',
+app.intent('GetClaimInformation',
     {
-        "slots": {},
+        "slots": { "claimType": "CLAIMTYPE", "yesNo": "YESNO" },
         "utterances": [
-            "what's for lunch",
-            "where should {I|we} go for lunch"
+            "my {-|claimType} is {broken|cracked|chiped}"
         ]
     },
     function (request, response) {
-        generateSuggestions(response);
-        return;
+        var claimType = request.slot('claimType');
+        if(!claimType)
+            response.reprompt('Sorry, I don\'t understand what is broken, please try again.');
+
+        response.say(`Ohh no, your ${claimType} is damaged.`);
+
+        //response.say(`Would you like to see who can repair the ${claimType} for you now? {-|yesNo}`);
+        response.send();
+        
     }
 );
 
-function generateSuggestions(response) {
-    var food = ["Thai",
-        "Sushi",
-        "Chik-fil-a",
-        "Smash Burgers",
-        "Uncle Julio's"
-    ];
-    var rand = food[Math.floor(Math.random() * food.length)];
-    response.say("How about some " + rand + " today?");
-    response.send();
-    return;
-}
 
 // Connect to lambda
 exports.handler = app.lambda();
