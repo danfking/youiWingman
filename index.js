@@ -6,9 +6,9 @@ app.launch(function (request, response) {
     response.shouldEndSession(false);
 })
 
-app.intent('GetClaimInformation',
+app.intent('GetClaimIntent',
     {
-        "slots": { "claimType": "CLAIMTYPE", "yesNo": "YESNO" },
+        "slots": { "claimType": "CLAIMTYPE" },
         "utterances": [
             "my {-|claimType} is {broken|cracked|chiped}"
         ]
@@ -17,12 +17,21 @@ app.intent('GetClaimInformation',
         var claimType = request.slot('claimType');
         if(!claimType)
             response.reprompt('Sorry, I don\'t understand what is broken, please try again.');
+        response.say(`Ohh no, would you like Youi to organise repairing your ${claimType} now?`);
+        response.send();   
+    }
+);
 
-        response.say(`Ohh no, your ${claimType} is damaged.`);
-
-        //response.say(`Would you like to see who can repair the ${claimType} for you now? {-|yesNo}`);
+app.intent('YesIntent',
+    {
+        "slots": { },
+        "utterances": [
+            "{yes|yeah|ok}"
+        ]
+    },
+    function (request, response) {
+        response.say(`Ok great... finding service providers.`);
         response.send();
-        
     }
 );
 
